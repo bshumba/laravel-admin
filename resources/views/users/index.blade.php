@@ -5,11 +5,13 @@
     <a href="{{ route('users.create') }}" class="btn btn-info">Add New</a>
 @endsection
 @section('content')
-    <div class="card" style="width:18rem;">
+    <div class="card">
         <div class="card-body">
             <div class="table-responsive-lg">
-                <div>Hello Users List</div>
+                <p class="login-box-msg">@include('message.flash-message')</p>
+                {!! $dataTable->table(['class' => 'table table-bordered'],true)!!}
             </div>
         </div>
     </div>
+    {!! $dataTable->scripts()!!}
 @endsection

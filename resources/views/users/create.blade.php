@@ -1,6 +1,6 @@
 @extends('layouts.app')
-@section('title', 'User List')
-@section('content-header', 'user list')
+@section('title', 'Create User')
+@section('content-header', 'Create User')
 @section('content-action')
     <a href="{{ route('users.create') }}" class="btn btn-info">Add New</a>
 @endsection
@@ -31,8 +31,7 @@
 
                     <div class="col-md-4">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" value="{{ old('password') }}"
-                               placeholder="Input Password" required>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Input Password" required>
                         @error('password')
                         <span class="text-danger">{{$message}}</span>
                         @enderror
@@ -40,8 +39,10 @@
 
                     <div class="col-md-4">
                         <label for="confirm-password" class="form-label">Confirm Password</label>
-                        <input type="password" class="form-control" id="confirm-password" name="" value="{{ old('confirm-password') }}"
-                               placeholder="Input Password" required>
+                        <input type="password" class="form-control" id="password" name="password_confirmation" placeholder="Input Password" required>
+                        @error('password')
+                        <span class="text-danger">{{$message}}</span>
+                        @enderror
 
                     </div>
                     <div class="text-right col-12">
